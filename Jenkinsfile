@@ -16,6 +16,14 @@ pipeline {
                              }
                                        }
               
+         stage("testing-website") {
+                     steps {
+                             sh 'sudo curl --ipv4 http://localhost:8089'
+                             }
+                           }
+
+
+
                      }
             } 
 
