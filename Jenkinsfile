@@ -26,7 +26,7 @@ pipeline {
                 stage("testing-website") {
                      steps {
                             
-                             sh 'sudo curl --ipv4  http://localhost:8089'
+                             sh 'sudo curl --ipv4  http://3.110.27.254:8089'
                             
                            }
                                    }
