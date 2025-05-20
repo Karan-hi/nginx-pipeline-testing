@@ -15,6 +15,20 @@ pipeline {
                              sh 'sudo docker tag nginx:$BUILD_TAG karanjangid12/pipeline-nginx:$BUILD_TAG'
                              }
                                        }
+
+
+
+
+                 stage("dockerlogin") {
+                     steps {
+                             withCredentials([string(credentialsId: 'docker-hub-passw', variable: 'docker-passwd-var')]) {
+                             sh 'sudo docker login -u karanjangid12 -p ${docker-passwd-var}'
+                             sh 'sudo docker push karanjangid12/pipeline-nginx:$BUILD_TAG'
+                             }
+                     } 
+                                      }
+
+
                stage("CONTAINER TESTING") {
                      steps {
                               sh 'sudo docker rm -f $(sudo docker ps -a -q)'
@@ -23,10 +37,12 @@ pipeline {
                }
               
 
+                
+
                 stage("testing-website") {
                      steps {
                             
-                             sh 'sudo curl --ipv4  http://3.110.27.254:8089'
+                             sh 'sudo curl   http://localhost:8089'
                             
                            }
                                    }
