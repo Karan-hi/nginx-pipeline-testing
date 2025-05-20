@@ -18,7 +18,7 @@ pipeline {
               
          stage("testing-website") {
                      steps {
-                             sh 'sudo curl http://localhost:8089'
+                             sh 'sudo curl http://3.110.27.254:8089'
                              }
                            }
 
