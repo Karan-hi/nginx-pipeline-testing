@@ -21,8 +21,8 @@ pipeline {
 
                  stage("dockerlogin") {
                      steps {
-                             withCredentials([string(credentialsId: 'docker-hub-passw', variable: 'docker-passwd-var')]) {
-                             sh 'sudo docker login -u karanjangid12 -p ${docker-passwd-var}'
+                             withCredentials([string(credentialsId: 'dockerhub_passwd', variable: 'dockerhub_passwd_var')]){
+                             sh 'sudo docker login -u karanjangid12 -p ${dockerhub_passwd_var}'
                              sh 'sudo docker push karanjangid12/pipeline-nginx:$BUILD_TAG'
                              }
                      } 
