@@ -2,6 +2,6 @@ FROM nginx:latest
 
 RUN apt-get update && apt-get install -y
 
-CMD ["/bin/bash"]
+CMD ["nginx", "-g", "daemon off;"]
 
 EXPOSE 8089 
