@@ -32,7 +32,7 @@ pipeline {
                stage("CONTAINER TESTING") {
                      steps {
                               sh 'sudo docker rm -f $(sudo docker ps -a -q)'
-                              sh 'sudo docker run -dit --name tom  -p 8089:8080 karanjangid12/pipeline-nginx:$BUILD_TAG'
+                              sh 'sudo docker run -dit --name tom -p 8089:8080 karanjangid12/pipeline-nginx:$BUILD_TAG'
                     }
                }
               
@@ -42,7 +42,7 @@ pipeline {
                 stage("testing-website") {
                      steps {
                                                        
-                               sh 'sudo curl --ipv4  http://localhost:8089'
+                               sh 'sudo curl --ipv4  http://localhost:8080'
                             
                            }
                                    }
