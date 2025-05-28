@@ -47,16 +47,19 @@ pipeline {
                            }
                                    }
 
-                stage("test-code) {
-                     steps {
+                stage('Print Hello World') {
+                steps {
+                    script {
+                        sh 'python -c "print(\'hello world\')"'
+                    }
+                }
+            }
+                     
 
-                              echo 'hello world'
+                              
                              
-                           }
-                                   }
+                           
+                            
 
                  }
          } 
-
-}
-}
