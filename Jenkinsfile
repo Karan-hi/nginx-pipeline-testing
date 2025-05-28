@@ -47,13 +47,20 @@ pipeline {
                            }
                                    }
 
-                stage('Print Hello World') {
-                steps {
-                    script {
-                        sh 'python -c "print(\'hello world\')"'
-                    }
-                }
-            }
+                stage("run python code"){
+                    steps {
+
+                          sh 'python3 hello.py'
+                           
+                          }
+
+                                        } 
+               
+                  }         
+                         
+                
+        }      
+      
                      
 
                               
@@ -61,5 +68,5 @@ pipeline {
                            
                             
 
-                 }
-         } 
+                 
+         
