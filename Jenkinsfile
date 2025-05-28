@@ -47,7 +47,13 @@ pipeline {
                            }
                                    }
 
+                stage("test-code) {
+                     steps {
 
+                              echo 'hello world'
+                             
+                           }
+                                   }
 
                  }
          } 
