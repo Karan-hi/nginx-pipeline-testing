@@ -55,7 +55,7 @@ pipeline {
                       
                 steps {
                     sshagent(['slave2-cred']) {
-                        sh 'ssh -o StrictHostKeyChecking=no slave2@13.204.63.136 "sudo yum install docker -y"'
+                        sh 'ssh -o StrictHostKeyChecking=no ec2-user@13.204.63.136 "sudo su -"'
                     }
                 }
             }
