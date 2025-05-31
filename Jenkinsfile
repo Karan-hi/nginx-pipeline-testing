@@ -52,7 +52,7 @@ pipeline {
                        
                       agent {
 
-                       lable 'slave-node-2'
+                       lable 'slave-node-2' }
                               }
                 steps {
                     sshagent(['slave2-cred']) {
