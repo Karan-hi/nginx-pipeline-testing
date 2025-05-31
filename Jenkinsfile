@@ -54,7 +54,7 @@ pipeline {
 
                       
                 steps {
-                    sshagent(['slave2-cred']) {
+                    sshagent(['slave-cred']) {
                         sh 'ssh -o StrictHostKeyChecking=no slave2@13.203.218.46 "sudo su -"'
                     }
                 }
