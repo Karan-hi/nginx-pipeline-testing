@@ -50,9 +50,9 @@ pipeline {
                 
             stage('Remote Access') {
                        
-                      agent {
+                      agent any 
 
-                       lable 'slave-node-2'}
+                      
                 steps {
                     sshagent(['slave2-cred']) {
                         sh 'ssh -o StrictHostKeyChecking=no slave2@13.204.63.136 "sudo su -"'
