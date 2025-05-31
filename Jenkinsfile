@@ -46,27 +46,21 @@ pipeline {
                             
                            }
                                    }
+                stages {  
+                  agent {
 
-                stage("run python code"){
-                    steps {
-
-                          sh 'python hello.py'
-                           
-                          }
-
-                                        } 
-               
-                  }         
-                         
+                       lable 'slave-node-2'
+                              }
                 
-        }      
-      
-                     
+            stage('Remote Access') {
+                steps {
+                    sshagent(['slave2-cred']) {
+                        sh 'ssh -o StrictHostKeyChecking=no slave2@13.204.63.136 "sudo su -"'
+                    }
+                }
+            }
 
-                              
-                             
-                           
-                            
 
-                 
-         
+}
+
+}
