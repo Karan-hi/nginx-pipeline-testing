@@ -50,9 +50,9 @@ pipeline {
                 
             stage('Remote Access') {
                        
-                      agent {  lable 'slave2' 
+                      agent lable 'slave2' 
 
-                      }
+                      
                 steps {
                     sshagent(['slave-cred']) {
             sh 'ssh -o StrictHostKeyChecking=no slave2@65.0.177.115 sudo docker run -d -p 49153:8080 --name webtest1 karanjangid12/pipeline-nginx :$BUILD_TAG'
