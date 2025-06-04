@@ -54,8 +54,8 @@ pipeline {
 
                       
                 steps {
-                    sshagent(['slave-cred']) {
-            sh 'ssh -o StrictHostKeyChecking=no slave2@65.0.177.115 sudo docker run -d -p 49153:8080 --name webtest1 karanjangid12/pipeline-nginx :$BUILD_TAG'
+                    sshagent(['slave-node-2']) {
+            sh 'ssh -o StrictHostKeyChecking=no ec2-user@65.0.177.115 sudo docker run -d -p 49153:8080 --name webtest1 karanjangid12/pipeline-nginx :$BUILD_TAG'
                     }
                 }
             }
