@@ -50,7 +50,7 @@ pipeline {
                 
             stage('Remote Access') {
                        
-                      agent 'slave2' 
+                      agent any 
 
                       
                 steps {
