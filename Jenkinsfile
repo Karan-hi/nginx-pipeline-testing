@@ -29,16 +29,12 @@ pipeline {
                                       }
 
 
-               stage("CONTAINER TESTING") {
-                     steps {
-                             sh 'sudo docker rm -f $(sudo docker ps -a -q)'
-		             sh 'sudo docker run -dit --name tom -p 8089:8080 karanjangid12/pipeline-nginx:$BUILD_TAG'
-                              
-                              
-                    }
-               }
-              
-
+                      stage("QAT TESTING") {
+		     steps {  
+		              sh 'sudo docker rm -f $(sudo docker ps -a -q)'
+		              sh 'sudo docker run -dit --name web10tom -p 8090:8080 karanjangid12/pipeline-nginx:$BUILD_TAG'
+                    } 
+	    }
                 
 
                 stage("testing-website") {
