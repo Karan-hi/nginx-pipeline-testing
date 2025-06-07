@@ -31,7 +31,7 @@ pipeline {
 
                       stage("QAT TESTING") {
 		     steps {  
-		              sh 'sudo docker rm -rf  $(sudo docker ps -a -q)'
+		              sh 'sudo docker rm  $(sudo docker ps -a -q)'
 		              sh 'sudo docker run -dit --name web10tom -p 8090:8080 karanjangid12/pipeline-nginx:$BUILD_TAG'
                     } 
 	    }
